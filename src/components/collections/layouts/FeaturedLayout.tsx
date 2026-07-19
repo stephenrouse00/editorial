@@ -1,0 +1,46 @@
+import type { CardCollectionItem } from '../../../types/card'
+import { ContentCard } from '../../cards/ContentCard'
+
+type FeaturedLayoutProps = {
+  items: CardCollectionItem[]
+  heroWidth?: '66' | '75'
+}
+
+export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps) {
+  if (items.length === 0) {
+    return null
+  }
+
+  const [heroItem, ...sideItems] = items
+  const useWideHero = heroWidth === '75'
+
+  return (
+    <div
+      className={
+        useWideHero
+          ? 'grid grid-cols-1 gap-4 lg:grid-cols-4'
+          : 'grid grid-cols-1 gap-4 lg:grid-cols-3'
+      }
+    >
+      <div className={useWideHero ? 'lg:col-span-3' : 'lg:col-span-2'}>
+        <ContentCard
+          article={heroItem.article}
+          variant={heroItem.variant}
+        />
+      </div>
+      {sideItems.length > 0 && (
+        <div
+          className={`flex flex-col gap-4 ${useWideHero ? 'lg:col-span-1' : 'lg:col-span-1'}`}
+        >
+          {sideItems.map(({ article, variant }) => (
+            <ContentCard
+              key={article.id}
+              article={article}
+              variant={variant}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
