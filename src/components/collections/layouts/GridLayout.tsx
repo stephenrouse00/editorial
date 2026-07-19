@@ -16,8 +16,8 @@ const columnClasses: Record<NonNullable<GridLayoutProps['columns']>, string> = {
 export function GridLayout({ items, columns = 3 }: GridLayoutProps) {
   return (
     <div className={`grid gap-6 ${columnClasses[columns]}`}>
-      {items.map(({ article, variant }) => (
-        <ContentCard key={article.id} article={article} variant={variant} />
+      {items.map(({ page, variant }) => (
+        <ContentCard key={page.id} page={page} variant={variant} />
       ))}
     </div>
   )

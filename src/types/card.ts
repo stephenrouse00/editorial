@@ -1,4 +1,4 @@
-import type { Article } from './article'
+import type { Page } from './page'
 
 export type CardDensity = 'standard' | 'compact'
 export type CardTheme = 'light' | 'dark'
@@ -9,7 +9,7 @@ export type CardVariant = {
   theme?: CardTheme
 }
 
-export type CardContent = Article & {
+export type CardContent = Page & {
   ctaLabel?: string
   ctaVariant?: CardCTAVariant
 }
@@ -24,7 +24,7 @@ export type CardCollectionLayout =
     }
 
 export type CardCollectionItem = {
-  article: CardContent
+  page: CardContent
   variant?: CardVariant
 }
 

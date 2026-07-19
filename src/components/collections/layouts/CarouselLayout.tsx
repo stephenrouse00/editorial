@@ -109,7 +109,7 @@ export function CarouselLayout({
         ref={trackRef}
         role="region"
         aria-roledescription="carousel"
-        aria-label="Article carousel"
+        aria-label="Page carousel"
         tabIndex={0}
         onKeyDown={handleKeyDown}
         className={cn(
@@ -118,9 +118,9 @@ export function CarouselLayout({
           peek ? 'px-[7.5%]' : '',
         )}
       >
-        {items.map(({ article, variant }, index) => (
+        {items.map(({ page, variant }, index) => (
           <div
-            key={article.id}
+            key={page.id}
             ref={(element) => {
               slideRefs.current[index] = element
             }}
@@ -136,7 +136,7 @@ export function CarouselLayout({
               minWidth: slideWidth,
             }}
           >
-            <ContentCard article={article} variant={variant} />
+            <ContentCard page={page} variant={variant} />
           </div>
         ))}
       </div>

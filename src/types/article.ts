@@ -1,4 +1,4 @@
-export type Article = {
+export type Page = {
   id: string
   slug: string
   title: string

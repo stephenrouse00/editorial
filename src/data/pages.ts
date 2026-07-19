@@ -1,6 +1,6 @@
 import type { CardContent } from '../types/card'
 
-export const articles: CardContent[] = [
+export const pages: CardContent[] = [
   {
     id: '1',
     slug: 'future-of-editorial-design',
@@ -10,7 +10,7 @@ export const articles: CardContent[] = [
     label: 'Design',
     imageUrl: 'https://picsum.photos/seed/editorial-1/800/450',
     imageAlt: 'Abstract editorial layout on a desk',
-    href: '/articles/future-of-editorial-design',
+    href: '/pages/future-of-editorial-design',
     ctaVariant: 'button',
   },
   {
@@ -22,7 +22,7 @@ export const articles: CardContent[] = [
     label: 'Writing',
     imageUrl: 'https://picsum.photos/seed/editorial-2/800/450',
     imageAlt: 'Person typing on a laptop',
-    href: '/articles/writing-for-the-web',
+    href: '/pages/writing-for-the-web',
     ctaLabel: 'Continue reading',
     ctaVariant: 'link',
   },
@@ -35,7 +35,7 @@ export const articles: CardContent[] = [
     label: 'Photography',
     imageUrl: 'https://picsum.photos/seed/editorial-3/800/450',
     imageAlt: 'Camera lens with soft background blur',
-    href: '/articles/photography-in-storytelling',
+    href: '/pages/photography-in-storytelling',
   },
   {
     id: '4',
@@ -46,7 +46,7 @@ export const articles: CardContent[] = [
     label: 'Strategy',
     imageUrl: 'https://picsum.photos/seed/editorial-4/800/450',
     imageAlt: 'Team reviewing analytics on a large screen',
-    href: '/articles/audience-first-strategy',
+    href: '/pages/audience-first-strategy',
     ctaVariant: 'button',
   },
   {
@@ -58,7 +58,7 @@ export const articles: CardContent[] = [
     label: 'Newsletter',
     imageUrl: 'https://picsum.photos/seed/editorial-5/800/450',
     imageAlt: 'Mobile phone showing an email newsletter',
-    href: '/articles/newsletter-renaissance',
+    href: '/pages/newsletter-renaissance',
     ctaVariant: 'link',
   },
   {
@@ -70,7 +70,7 @@ export const articles: CardContent[] = [
     label: 'Accessibility',
     imageUrl: 'https://picsum.photos/seed/editorial-6/800/450',
     imageAlt: 'Hands using assistive technology on a tablet',
-    href: '/articles/accessibility-in-publishing',
+    href: '/pages/accessibility-in-publishing',
   },
   {
     id: '7',
@@ -81,7 +81,7 @@ export const articles: CardContent[] = [
     label: 'SEO',
     imageUrl: 'https://picsum.photos/seed/editorial-7/800/450',
     imageAlt: 'Charts and graphs on a monitor',
-    href: '/articles/data-driven-headlines',
+    href: '/pages/data-driven-headlines',
     ctaVariant: 'button',
   },
   {
@@ -93,7 +93,7 @@ export const articles: CardContent[] = [
     label: 'Journalism',
     imageUrl: 'https://picsum.photos/seed/editorial-8/800/450',
     imageAlt: 'City street with newspaper boxes',
-    href: '/articles/local-journalism',
+    href: '/pages/local-journalism',
     ctaLabel: 'Read the story',
     ctaVariant: 'link',
   },

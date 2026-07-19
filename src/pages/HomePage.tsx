@@ -1,21 +1,21 @@
-import { articles } from '../data/articles'
+import { pages } from '../data/pages'
 import { CardVariantProvider } from '../components/cards/CardVariantContext'
 import { ContentCard } from '../components/cards/ContentCard'
 import { CardCollection } from '../components/collections/CardCollection'
 
 const featuredItems = [
-  { article: articles[0], variant: { density: 'standard' as const } },
-  { article: articles[1], variant: { density: 'compact' as const } },
-  { article: articles[2], variant: { density: 'compact' as const } },
-  { article: articles[3], variant: { density: 'compact' as const } },
-  { article: articles[4], variant: { density: 'compact' as const } },
-  { article: articles[5], variant: { density: 'compact' as const } },
+  { page: pages[0], variant: { density: 'standard' as const } },
+  { page: pages[1], variant: { density: 'compact' as const } },
+  { page: pages[2], variant: { density: 'compact' as const } },
+  { page: pages[3], variant: { density: 'compact' as const } },
+  { page: pages[4], variant: { density: 'compact' as const } },
+  { page: pages[5], variant: { density: 'compact' as const } },
 ]
 
-const latestItems = articles.slice(4, 8).map((article) => ({ article }))
+const latestItems = pages.slice(4, 8).map((page) => ({ page }))
 
-const carouselSingleItems = articles.slice(0, 5).map((article) => ({ article }))
-const carouselMultiItems = articles.slice(0, 6).map((article) => ({ article }))
+const carouselSingleItems = pages.slice(0, 5).map((page) => ({ page }))
+const carouselMultiItems = pages.slice(0, 6).map((page) => ({ page }))
 
 export function HomePage() {
   return (
@@ -44,25 +44,25 @@ export function HomePage() {
         </p>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
-            <ContentCard article={articles[7]} />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'dark', density: 'standard' }}>
-            <ContentCard article={articles[7]} />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'light', density: 'compact' }}>
-            <ContentCard article={articles[7]} />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'dark', density: 'compact' }}>
-            <ContentCard article={articles[7]} />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
       </section>

@@ -13,12 +13,12 @@ import { CardMedia } from './CardMedia'
 import { CardTitle } from './CardTitle'
 
 export type ContentCardProps = {
-  article: CardContent
+  page: CardContent
   variant?: CardVariant
   className?: string
 }
 
-export function ContentCard({ article, variant, className }: ContentCardProps) {
+export function ContentCard({ page, variant, className }: ContentCardProps) {
   const collectionVariant = useCollectionVariant()
   const resolvedVariant = mergeVariants(collectionVariant, variant)
   const classes = resolveCardClasses(resolvedVariant)
@@ -28,14 +28,14 @@ export function ContentCard({ article, variant, className }: ContentCardProps) {
     return (
       <ResolvedVariantProvider variant={resolvedVariant}>
         <article className={cn(classes.root, className)}>
-          <a href={article.href} className={classes.compactLink}>
-            {article.imageUrl && (
+          <a href={page.href} className={classes.compactLink}>
+            {page.imageUrl && (
               <CardMedia
-                src={article.imageUrl}
-                alt={article.imageAlt ?? article.title}
+                src={page.imageUrl}
+                alt={page.imageAlt ?? page.title}
               />
             )}
-            <h3 className={classes.title}>{article.title}</h3>
+            <h3 className={classes.title}>{page.title}</h3>
           </a>
         </article>
       </ResolvedVariantProvider>
@@ -45,25 +45,25 @@ export function ContentCard({ article, variant, className }: ContentCardProps) {
   return (
     <ResolvedVariantProvider variant={resolvedVariant}>
       <article className={cn(classes.root, className)}>
-        {article.imageUrl && (
+        {page.imageUrl && (
           <a
-            href={article.href}
+            href={page.href}
             className={classes.mediaLink}
             tabIndex={-1}
             aria-hidden="true"
           >
             <CardMedia
-              src={article.imageUrl}
-              alt={article.imageAlt ?? article.title}
+              src={page.imageUrl}
+              alt={page.imageAlt ?? page.title}
             />
           </a>
         )}
         <div className={classes.body}>
-          <CardLabel>{article.label}</CardLabel>
-          <CardTitle href={article.href}>{article.title}</CardTitle>
-          <CardExcerpt>{article.excerpt}</CardExcerpt>
-          <CardCTA href={article.href} variant={article.ctaVariant}>
-            {article.ctaLabel ?? 'Read more'}
+          <CardLabel>{page.label}</CardLabel>
+          <CardTitle href={page.href}>{page.title}</CardTitle>
+          <CardExcerpt>{page.excerpt}</CardExcerpt>
+          <CardCTA href={page.href} variant={page.ctaVariant}>
+            {page.ctaLabel ?? 'Read more'}
           </CardCTA>
         </div>
       </article>

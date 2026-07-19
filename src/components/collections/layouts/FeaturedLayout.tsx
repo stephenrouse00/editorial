@@ -24,7 +24,7 @@ export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps)
     >
       <div className={useWideHero ? 'lg:col-span-3' : 'lg:col-span-2'}>
         <ContentCard
-          article={heroItem.article}
+          page={heroItem.page}
           variant={heroItem.variant}
         />
       </div>
@@ -32,10 +32,10 @@ export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps)
         <div
           className={`flex flex-col gap-4 ${useWideHero ? 'lg:col-span-1' : 'lg:col-span-1'}`}
         >
-          {sideItems.map(({ article, variant }) => (
+          {sideItems.map(({ page, variant }) => (
             <ContentCard
-              key={article.id}
-              article={article}
+              key={page.id}
+              page={page}
               variant={variant}
             />
           ))}
