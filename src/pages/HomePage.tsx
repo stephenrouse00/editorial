@@ -44,7 +44,7 @@ export function HomePage() {
         </p>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
-            <ContentCard page={pages[7]} ctaLabel="Learn more" ctaVariant='button' />
+            <ContentCard page={pages[7]} ctaLabel="" ctaVariant='button' />
           </CardVariantProvider>
         </div>
         <br/>

@@ -9,10 +9,7 @@ export type CardVariant = {
   theme?: CardTheme
 }
 
-export type CardContent = Page & {
-  ctaLabel?: string
-  ctaVariant?: CardCTAVariant
-}
+export type CardContent = Page
 
 export type CardCollectionLayout =
   | { type: 'grid'; columns?: 1 | 2 | 3 | 4 }

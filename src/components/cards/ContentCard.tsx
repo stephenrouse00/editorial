@@ -11,6 +11,7 @@ import { CardExcerpt } from './CardExcerpt'
 import { CardLabel } from './CardLabel'
 import { CardMedia } from './CardMedia'
 import { CardTitle } from './CardTitle'
+import { CardCTALabel } from './CardCTALabel'
 
 
 export type ContentCardProps = {
@@ -66,7 +67,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
           <CardTitle href={page.href}>{page.title}</CardTitle>
           <CardExcerpt>{page.excerpt}</CardExcerpt>
           <CardCTA href={page.href} variant={ctaVariant}>
-            {ctaLabel ?? 'Read more'}
+            <CardCTALabel page={page} ctaLabel={ctaLabel} />
           </CardCTA>
         </div>
       </article>

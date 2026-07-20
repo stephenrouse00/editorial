@@ -79,7 +79,7 @@ export const pages: CardContent[] = [
     title: 'When Data Should — and Shouldn\'t — Drive Headlines',
     excerpt:
       'Balancing SEO insights with editorial judgment in headline writing.',
-    type: 'article',
+    type: 'product',
     category: 'SEO',
     imageUrl: 'https://picsum.photos/seed/editorial-7/800/450',
     imageAlt: 'Charts and graphs on a monitor',
