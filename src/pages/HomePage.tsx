@@ -12,7 +12,7 @@ const featuredItems = [
   { page: pages[5], variant: { density: 'compact' as const } },
 ]
 
-const latestItems = pages.slice(4, 8).map((page) => ({ page }))
+const latestItems = pages.toReversed().map((page) => ({ page }))
 
 const carouselSingleItems = pages.slice(0, 5).map((page) => ({ page }))
 const carouselMultiItems = pages.slice(0, 6).map((page) => ({ page }))
