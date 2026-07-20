@@ -3,7 +3,8 @@ export type Page = {
   slug: string
   title: string
   excerpt: string
-  label: string
+  type: string
+  category: string
   imageUrl?: string
   imageAlt?: string
   href: string

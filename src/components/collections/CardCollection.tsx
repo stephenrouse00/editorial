@@ -8,6 +8,8 @@ export function CardCollection({
   title,
   variant,
   layout,
+  ctaLabel,
+  ctaVariant,
   items,
 }: CardCollectionConfig) {
   return (
@@ -22,15 +24,17 @@ export function CardCollection({
           </h2>
         )}
         {layout.type === 'featured' ? (
-          <FeaturedLayout items={items} heroWidth={layout.heroWidth} />
+          <FeaturedLayout items={items} heroWidth={layout.heroWidth} ctaLabel={ctaLabel} ctaVariant={ctaVariant} />
         ) : layout.type === 'carousel' ? (
           <CarouselLayout
+            ctaLabel={ctaLabel}
+            ctaVariant={ctaVariant}
             items={items}
             visibleSlides={layout.visibleSlides}
             adjacentSlides={layout.adjacentSlides}
           />
         ) : (
-          <GridLayout items={items} columns={layout.columns} />
+          <GridLayout items={items} columns={layout.columns} ctaLabel={ctaLabel} ctaVariant={ctaVariant} />
         )}
       </section>
     </CardVariantProvider>

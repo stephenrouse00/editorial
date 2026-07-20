@@ -1,4 +1,4 @@
-import type { CardContent, CardVariant } from '../../types/card'
+import type { CardContent, CardCTAVariant, CardVariant } from '../../types/card'
 import { cn } from './cardVariants'
 import {
   mergeVariants,
@@ -12,13 +12,16 @@ import { CardLabel } from './CardLabel'
 import { CardMedia } from './CardMedia'
 import { CardTitle } from './CardTitle'
 
+
 export type ContentCardProps = {
   page: CardContent
   variant?: CardVariant
   className?: string
+  ctaLabel?: string
+  ctaVariant?: CardCTAVariant
 }
 
-export function ContentCard({ page, variant, className }: ContentCardProps) {
+export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: ContentCardProps) {
   const collectionVariant = useCollectionVariant()
   const resolvedVariant = mergeVariants(collectionVariant, variant)
   const classes = resolveCardClasses(resolvedVariant)
@@ -59,11 +62,11 @@ export function ContentCard({ page, variant, className }: ContentCardProps) {
           </a>
         )}
         <div className={classes.body}>
-          <CardLabel>{page.label}</CardLabel>
+          <CardLabel>{page.category}</CardLabel>
           <CardTitle href={page.href}>{page.title}</CardTitle>
           <CardExcerpt>{page.excerpt}</CardExcerpt>
-          <CardCTA href={page.href} variant={page.ctaVariant}>
-            {page.ctaLabel ?? 'Read more'}
+          <CardCTA href={page.href} variant={ctaVariant}>
+            {ctaLabel ?? 'Read more'}
           </CardCTA>
         </div>
       </article>

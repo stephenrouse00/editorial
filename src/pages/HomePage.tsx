@@ -44,25 +44,25 @@ export function HomePage() {
         </p>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
-            <ContentCard page={pages[7]} />
+            <ContentCard page={pages[7]} ctaLabel="Learn more" ctaVariant='button' />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
-          <CardVariantProvider variant={{ theme: 'dark', density: 'standard' }}>
-            <ContentCard page={pages[7]} />
+          <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
+            <ContentCard page={pages[7]} ctaLabel="Read more" ctaVariant='link' />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'light', density: 'compact' }}>
-            <ContentCard page={pages[7]} />
+            <ContentCard page={pages[7]} ctaLabel="Read more" ctaVariant='button' />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
           <CardVariantProvider variant={{ theme: 'dark', density: 'compact' }}>
-            <ContentCard page={pages[7]} />
+            <ContentCard page={pages[7]} ctaLabel="Learn more" ctaVariant='link' />
           </CardVariantProvider>
         </div>
       </section>
@@ -78,16 +78,19 @@ export function HomePage() {
           Card collections are comprised of cards.  The card collection has a number of design and functional variations including basic, featured, and slide carousels. The design variation of the cards in a card collection (standard, compact, light, dark, etc.) is controlled at the card collection level.
         </p>
         <CardCollection
-        title="Basic card collection"
-        variant={{ theme: 'light', density: 'standard' }}
-        layout={{ type: 'grid', columns: 3 }}
-        items={latestItems}
+          title="Basic card collection"
+          variant={{ theme: 'light', density: 'standard' }}
+          layout={{ type: 'grid', columns: 3 }}
+          ctaLabel="More"
+          ctaVariant='link'
+          items={latestItems}
         />
 
         <CardCollection
           title="Featured content collection"
           variant={{ theme: 'light' }}
           layout={{ type: 'featured', heroWidth: '75' }}
+          ctaVariant='button'
           items={featuredItems}
         />
 
@@ -95,6 +98,8 @@ export function HomePage() {
           title="Single-slide carousel"
           variant={{ theme: 'light', density: 'standard' }}
           layout={{ type: 'carousel', visibleSlides: 1, adjacentSlides: 'hidden' }}
+          ctaLabel="junk more"
+          ctaVariant='button'
           items={carouselSingleItems}
         />
 
@@ -102,6 +107,8 @@ export function HomePage() {
           title="Single-slide carousel with peek"
           variant={{ theme: 'light', density: 'standard' }}
           layout={{ type: 'carousel', visibleSlides: 1, adjacentSlides: 'peek' }}
+          ctaLabel="blah more"
+          ctaVariant='button'
           items={carouselSingleItems}
         />
 
@@ -109,6 +116,8 @@ export function HomePage() {
           title="Three-slide carousel"
           variant={{ theme: 'dark', density: 'standard' }}
           layout={{ type: 'carousel', visibleSlides: 3, adjacentSlides: 'hidden' }}
+          ctaLabel="explore more"
+          ctaVariant='button'
           items={carouselMultiItems}
         />
 
@@ -116,6 +125,7 @@ export function HomePage() {
           title="Three-slide carousel with peek"
           variant={{ theme: 'light', density: 'standard' }}
           layout={{ type: 'carousel', visibleSlides: 3, adjacentSlides: 'peek' }}
+          ctaVariant='button'
           items={carouselMultiItems}
         />
       </section>

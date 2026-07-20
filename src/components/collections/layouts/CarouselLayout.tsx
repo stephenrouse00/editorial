@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from 'react'
-import type { CardCollectionItem } from '../../../types/card'
+import type { CardCollectionItem, CardCTAVariant } from '../../../types/card'
 import { cn } from '../../cards/cardVariants'
 import { ContentCard } from '../../cards/ContentCard'
 
 type CarouselLayoutProps = {
+  ctaLabel?: string
+  ctaVariant?: CardCTAVariant
   items: CardCollectionItem[]
   visibleSlides?: 1 | 2 | 3 | 4
   adjacentSlides?: 'hidden' | 'peek'
@@ -30,6 +32,8 @@ function getSlideWidthPercent(
 }
 
 export function CarouselLayout({
+  ctaLabel,
+  ctaVariant,
   items,
   visibleSlides = 1,
   adjacentSlides = 'hidden',
@@ -136,7 +140,7 @@ export function CarouselLayout({
               minWidth: slideWidth,
             }}
           >
-            <ContentCard page={page} variant={variant} />
+            <ContentCard page={page} variant={variant} ctaLabel={ctaLabel} ctaVariant={ctaVariant} />
           </div>
         ))}
       </div>

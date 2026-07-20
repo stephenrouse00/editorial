@@ -32,5 +32,7 @@ export type CardCollectionConfig = {
   title?: string
   variant?: CardVariant
   layout: CardCollectionLayout
+  ctaLabel?: string
+  ctaVariant?: CardCTAVariant
   items: CardCollectionItem[]
 }

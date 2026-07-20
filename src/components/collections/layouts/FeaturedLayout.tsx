@@ -1,12 +1,14 @@
-import type { CardCollectionItem } from '../../../types/card'
+import type { CardCollectionItem, CardCTAVariant } from '../../../types/card'
 import { ContentCard } from '../../cards/ContentCard'
 
 type FeaturedLayoutProps = {
   items: CardCollectionItem[]
   heroWidth?: '66' | '75'
+  ctaLabel?: string
+  ctaVariant?: CardCTAVariant
 }
 
-export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps) {
+export function FeaturedLayout({ items, heroWidth = '75', ctaLabel, ctaVariant }: FeaturedLayoutProps) {
   if (items.length === 0) {
     return null
   }
@@ -26,6 +28,8 @@ export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps)
         <ContentCard
           page={heroItem.page}
           variant={heroItem.variant}
+          ctaLabel={ctaLabel}
+          ctaVariant={ctaVariant}
         />
       </div>
       {sideItems.length > 0 && (
@@ -37,6 +41,8 @@ export function FeaturedLayout({ items, heroWidth = '75' }: FeaturedLayoutProps)
               key={page.id}
               page={page}
               variant={variant}
+              ctaLabel={ctaLabel}
+              ctaVariant={ctaVariant}
             />
           ))}
         </div>
