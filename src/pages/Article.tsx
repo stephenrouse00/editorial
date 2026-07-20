@@ -36,6 +36,7 @@ export function ArticlePage({ page }: { page: Page }) {
           Explore more articles on similar topics.
         </p>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/*TODO: Update this to use the getPageSubset function currently in HomePage to find articles with the same type and category as the current article.*/}
           {pages
             .filter((p) => p.slug !== page.slug)
             .filter((p) => p.category === page.category)
@@ -58,6 +59,7 @@ export function ArticlePage({ page }: { page: Page }) {
           Discover additional articles from our collection.
         </p>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/*TODO: Update this to use the getPageSubset function currently in HomePage to find articles with the same type as the current article.*/}
           {pages
             .filter((p) => p.slug !== page.slug)
             .slice(3, 6)
@@ -77,6 +79,8 @@ export function ArticlePage({ page }: { page: Page }) {
         <p className="mt-3 max-w-2xl text-lg text-neutral-600">
           Check out some of our featured articles.
         </p>
+
+        {/*TODO: Update this to use a defined list of pages, like is done in HomePage.*/}
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {pages
             .filter((p) => p.slug !== page.slug)

@@ -3,6 +3,34 @@ import { CardVariantProvider } from '../components/cards/CardVariantContext'
 import { ContentCard } from '../components/cards/ContentCard'
 import { CardCollection } from '../components/collections/CardCollection'
 
+
+//const allItems = pages.map((page) => ({ page }))
+
+//Creating a function that will return a subset of pages based on parameters passed in.  The parameters include number of items to return, sort order (oldest first or newest first), and a filter which may include the page type and the page category.
+// TODO: Move this function to a utility file so it can be imported into various pages.
+function getPageSubset({ count, sortOrder, filter }: { count: number, sortOrder: 'newest' | 'oldest', filter?: { type?: string, category?: string } }): { page: any }[] {
+  let filteredPages = pages
+
+  if (filter) {
+    if (filter.type) {
+      filteredPages = filteredPages.filter((page) => page.type === filter.type)
+    }
+    if (filter.category) {
+      filteredPages = filteredPages.filter((page) => page.category === filter.category)
+    }
+  }
+
+  if (sortOrder === 'newest') {
+    filteredPages = filteredPages.slice().reverse()
+  }
+
+  return filteredPages.slice(0, count).map((page) => ({ page }))
+}
+
+
+
+
+// Creating arrays of content to be used on this page.
 const featuredItems = [
   { page: pages[0], variant: { density: 'standard' as const } },
   { page: pages[1], variant: { density: 'compact' as const } },
@@ -12,10 +40,15 @@ const featuredItems = [
   { page: pages[5], variant: { density: 'compact' as const } },
 ]
 
-const latestItems = pages.toReversed().map((page) => ({ page }))
-
 const carouselSingleItems = pages.slice(0, 5).map((page) => ({ page }))
 const carouselMultiItems = pages.slice(0, 6).map((page) => ({ page }))
+
+
+
+
+
+
+
 
 export function HomePage() {
   return (
@@ -83,7 +116,7 @@ export function HomePage() {
           layout={{ type: 'grid', columns: 3 }}
           ctaLabel="More"
           ctaVariant='link'
-          items={latestItems}
+          items={getPageSubset({ count: 3, sortOrder: 'newest' })}
         />
 
         <CardCollection
