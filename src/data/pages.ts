@@ -7,6 +7,12 @@ export const pages: CardContent[] = [
     title: 'The Future of Editorial Design in Digital Publishing',
     excerpt:
       'How modern publishers are rethinking layout, typography, and reader experience for the web.',
+    body:
+      `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate efficitur lectus quis cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse in blandit velit. Ut id ornare libero, et aliquet sem. Maecenas in ex neque. Fusce tincidunt scelerisque erat vitae rutrum. Quisque sed dapibus diam.</p>
+      <p>Donec vitae facilisis nunc, et porta turpis. Aliquam pellentesque sed dui vel tristique. Proin posuere nunc et fringilla posuere. Sed mattis justo sed euismod tincidunt. Aliquam euismod sapien odio, vel auctor lectus blandit eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eget mi ipsum. Ut varius eget ante eu fringilla. Suspendisse id enim hendrerit, hendrerit mauris sit amet, imperdiet sapien. Nullam hendrerit pulvinar ligula, eu rhoncus nisl rutrum in. Praesent pellentesque arcu sapien, eget tempus dolor consectetur sit amet.</p>
+      <p>Quisque sapien risus, gravida in malesuada quis, faucibus quis urna. Maecenas tellus orci, rutrum vel volutpat a, varius sit amet tortor. Donec justo felis, ornare quis laoreet quis, pellentesque at urna. Vestibulum porta dignissim viverra. Vivamus iaculis mollis ante sed congue. Donec egestas scelerisque orci, nec pulvinar arcu. In ultrices gravida condimentum. Aliquam congue auctor lorem, non semper diam eleifend non. Suspendisse pellentesque convallis porta.</p>
+      <p>Vivamus in ligula molestie, imperdiet augue quis, molestie orci. Duis non sem in ante varius consectetur in nec ipsum. Proin in massa at tortor ultrices faucibus. Integer euismod est sit amet tortor convallis, lacinia laoreet justo viverra. Donec quis lorem luctus, lobortis dui eget, aliquet ligula. Nam condimentum suscipit orci, sed elementum urna tempus ut. Quisque ut sem semper, scelerisque libero a, volutpat sem.</p>
+      <p>Donec id fermentum erat. Praesent et ex egestas, hendrerit justo id, facilisis dolor. Sed eu quam ac nulla commodo porta non nec urna. Suspendisse potenti. Nunc varius odio sit amet elit scelerisque, in maximus justo scelerisque. Morbi nulla mauris, tempus quis justo quis, tempor pretium risus. Suspendisse fermentum imperdiet ligula in mollis. Quisque at gravida dui, ac ultrices purus. Nullam tellus odio, tempor ut nunc sed, finibus eleifend diam. Nullam nec tortor est. In vel aliquet magna. Etiam tristique, nulla quis laoreet aliquet, enim ex dictum justo, nec blandit purus augue sit amet mauris. Nunc dapibus nunc a volutpat hendrerit.`,
     type: 'article',
     category: 'Design',
     imageUrl: 'https://picsum.photos/seed/editorial-1/800/450',
@@ -96,5 +102,23 @@ export const pages: CardContent[] = [
     imageUrl: 'https://picsum.photos/seed/editorial-8/800/450',
     imageAlt: 'City street with newspaper boxes',
     href: '/pages/local-journalism',
+  },
+  {
+    id: '9',
+    slug: 'future-of-editorial-design-2',
+    title: 'The Future of Editorial Design in Digital Publishing - Part 2',
+    excerpt:
+      'How modern publishers are rethinking layout, typography, and reader experience for the web.',
+    body:
+      `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate efficitur lectus quis cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse in blandit velit. Ut id ornare libero, et aliquet sem. Maecenas in ex neque. Fusce tincidunt scelerisque erat vitae rutrum. Quisque sed dapibus diam.</p>
+      <p>Donec vitae facilisis nunc, et porta turpis. Aliquam pellentesque sed dui vel tristique. Proin posuere nunc et fringilla posuere. Sed mattis justo sed euismod tincidunt. Aliquam euismod sapien odio, vel auctor lectus blandit eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec eget mi ipsum. Ut varius eget ante eu fringilla. Suspendisse id enim hendrerit, hendrerit mauris sit amet, imperdiet sapien. Nullam hendrerit pulvinar ligula, eu rhoncus nisl rutrum in. Praesent pellentesque arcu sapien, eget tempus dolor consectetur sit amet.</p>
+      <p>Quisque sapien risus, gravida in malesuada quis, faucibus quis urna. Maecenas tellus orci, rutrum vel volutpat a, varius sit amet tortor. Donec justo felis, ornare quis laoreet quis, pellentesque at urna. Vestibulum porta dignissim viverra. Vivamus iaculis mollis ante sed congue. Donec egestas scelerisque orci, nec pulvinar arcu. In ultrices gravida condimentum. Aliquam congue auctor lorem, non semper diam eleifend non. Suspendisse pellentesque convallis porta.</p>
+      <p>Vivamus in ligula molestie, imperdiet augue quis, molestie orci. Duis non sem in ante varius consectetur in nec ipsum. Proin in massa at tortor ultrices faucibus. Integer euismod est sit amet tortor convallis, lacinia laoreet justo viverra. Donec quis lorem luctus, lobortis dui eget, aliquet ligula. Nam condimentum suscipit orci, sed elementum urna tempus ut. Quisque ut sem semper, scelerisque libero a, volutpat sem.</p>
+      <p>Donec id fermentum erat. Praesent et ex egestas, hendrerit justo id, facilisis dolor. Sed eu quam ac nulla commodo porta non nec urna. Suspendisse potenti. Nunc varius odio sit amet elit scelerisque, in maximus justo scelerisque. Morbi nulla mauris, tempus quis justo quis, tempor pretium risus. Suspendisse fermentum imperdiet ligula in mollis. Quisque at gravida dui, ac ultrices purus. Nullam tellus odio, tempor ut nunc sed, finibus eleifend diam. Nullam nec tortor est. In vel aliquet magna. Etiam tristique, nulla quis laoreet aliquet, enim ex dictum justo, nec blandit purus augue sit amet mauris. Nunc dapibus nunc a volutpat hendrerit.`,
+    type: 'article',
+    category: 'Design',
+    imageUrl: 'https://picsum.photos/seed/editorial-1/800/450',
+    imageAlt: 'Abstract editorial layout on a desk',
+    href: '/pages/future-of-editorial-design-2',
   },
 ]
