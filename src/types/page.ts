@@ -5,7 +5,7 @@ export type Page = {
   excerpt: string
   body?: string
   type: string
-  category: string
+  category?: string
   imageUrl?: string
   imageAlt?: string
 }
