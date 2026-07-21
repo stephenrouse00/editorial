@@ -17,7 +17,6 @@ export const pages: CardContent[] = [
     category: 'Design',
     imageUrl: 'https://picsum.photos/seed/editorial-1/800/450',
     imageAlt: 'Abstract editorial layout on a desk',
-    href: '/pages/future-of-editorial-design',
   },
   {
     id: '2',
@@ -29,7 +28,6 @@ export const pages: CardContent[] = [
     category: 'Writing',
     imageUrl: 'https://picsum.photos/seed/editorial-2/800/450',
     imageAlt: 'Person typing on a laptop',
-    href: '/pages/writing-for-the-web',
   },
   {
     id: '3',
@@ -41,7 +39,6 @@ export const pages: CardContent[] = [
     category: 'Photography',
     imageUrl: 'https://picsum.photos/seed/editorial-3/800/450',
     imageAlt: 'Camera lens with soft background blur',
-    href: '/pages/photography-in-storytelling',
   },
   {
     id: '4',
@@ -53,7 +50,6 @@ export const pages: CardContent[] = [
     category: 'Strategy',
     imageUrl: 'https://picsum.photos/seed/editorial-4/800/450',
     imageAlt: 'Team reviewing analytics on a large screen',
-    href: '/pages/audience-first-strategy',
   },
   {
     id: '5',
@@ -65,7 +61,6 @@ export const pages: CardContent[] = [
     category: 'Newsletter',
     imageUrl: 'https://picsum.photos/seed/editorial-5/800/450',
     imageAlt: 'Mobile phone showing an email newsletter',
-    href: '/pages/newsletter-renaissance',
   },
   {
     id: '6',
@@ -77,7 +72,6 @@ export const pages: CardContent[] = [
     category: 'Accessibility',
     imageUrl: 'https://picsum.photos/seed/editorial-6/800/450',
     imageAlt: 'Hands using assistive technology on a tablet',
-    href: '/pages/accessibility-in-publishing',
   },
   {
     id: '7',
@@ -89,7 +83,6 @@ export const pages: CardContent[] = [
     category: 'SEO',
     imageUrl: 'https://picsum.photos/seed/editorial-7/800/450',
     imageAlt: 'Charts and graphs on a monitor',
-    href: '/pages/data-driven-headlines',
   },
   {
     id: '8',
@@ -101,7 +94,6 @@ export const pages: CardContent[] = [
     category: 'Journalism',
     imageUrl: 'https://picsum.photos/seed/editorial-8/800/450',
     imageAlt: 'City street with newspaper boxes',
-    href: '/pages/local-journalism',
   },
   {
     id: '9',
@@ -119,6 +111,5 @@ export const pages: CardContent[] = [
     category: 'Design',
     imageUrl: 'https://picsum.photos/seed/editorial-1/800/450',
     imageAlt: 'Abstract editorial layout on a desk',
-    href: '/pages/future-of-editorial-design-2',
   },
 ]

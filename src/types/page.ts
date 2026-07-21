@@ -8,5 +8,4 @@ export type Page = {
   category: string
   imageUrl?: string
   imageAlt?: string
-  href: string
 }

@@ -32,7 +32,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
     return (
       <ResolvedVariantProvider variant={resolvedVariant}>
         <article className={cn(classes.root, className)}>
-          <a href={page.href} className={classes.compactLink}>
+          <a href={page.slug} className={classes.compactLink}>
             {page.imageUrl && (
               <CardMedia
                 src={page.imageUrl}
@@ -51,7 +51,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
       <article className={cn(classes.root, className)}>
         {page.imageUrl && (
           <a
-            href={page.href}
+            href={page.slug}
             className={classes.mediaLink}
             tabIndex={-1}
             aria-hidden="true"
@@ -64,9 +64,9 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
         )}
         <div className={classes.body}>
           <CardLabel>{page.category}</CardLabel>
-          <CardTitle href={page.href}>{page.title}</CardTitle>
+          <CardTitle slug={page.slug}>{page.title}</CardTitle>
           <CardExcerpt>{page.excerpt}</CardExcerpt>
-          <CardCTA href={page.href} variant={ctaVariant}>
+          <CardCTA slug={page.slug} variant={ctaVariant}>
             <CardCTALabel page={page} ctaLabel={ctaLabel} />
           </CardCTA>
         </div>

@@ -3,12 +3,12 @@ import type { CardCTAVariant } from '../../types/card'
 import { isCompact, resolveCardClasses, useResolvedVariant } from './CardVariantContext'
 
 type CardCTAProps = {
-  href: string
+  slug: string
   variant?: CardCTAVariant
   children: ReactNode
 }
 
-export function CardCTA({ href, variant = 'link', children }: CardCTAProps) {
+export function CardCTA({ slug, variant = 'link', children }: CardCTAProps) {
   const resolvedVariant = useResolvedVariant()
 
   if (isCompact(resolvedVariant)) {
@@ -19,14 +19,14 @@ export function CardCTA({ href, variant = 'link', children }: CardCTAProps) {
 
   if (variant === 'button') {
     return (
-      <a href={href} className={classes.ctaButton}>
+      <a href={slug} className={classes.ctaButton}>
         {children}
       </a>
     )
   }
 
   return (
-    <a href={href} className={classes.ctaLink}>
+    <a href={slug} className={classes.ctaLink}>
       {children}
     </a>
   )
