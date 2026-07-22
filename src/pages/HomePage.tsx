@@ -70,32 +70,65 @@ export function HomePage() {
           id="compact-example-heading"
           className="mb-6 text-2xl font-semibold text-neutral-900"
         >
-          Singular card variations
+          Card Creation Philosophy
         </h2>
         <p className="mt-3 max-w-2xl text-lg text-neutral-600">
-          These cards are exactly the same from a data perspective.  Changing "density" from standard to compact changes the size and layout of the card and what data points are exposed.  If all data points have been provided by an author, changing from one design variant to another is simple.  If some datapoints are missing, the author may need to added them if changing from compact to standard.
+          Different CMSs approach the creation of cards in different ways.  Some provide a dialogue that requires the author to input data points (e.g. title, excerpt, url, etc.) for each element in a card while others generate cards in a more dynamic way.
+        </p>
+        <p className="mt-3 max-w-2xl text-lg text-neutral-600">
+          In our system, cards are primarily generated dynamically by authoring a page ID, theme (light or dark), and a "density" (standard or compact).  However, cards can also be created statically if needed.  This combined approach 1) simplifies the creation process by preventing the author from copying and pasting data points (e.g. title, excerpt, etc.) from a page and into a card, 2) ensures that the data points in the card are always up to date with the referenced page's content, and 3) provides an ability to render a card for a custom promotion of a page or for content that doesn't live in the CMS (i.e. an external source).
+        </p>
+      </section>
+
+      <section className="py-10" aria-labelledby="compact-example-heading">
+        <h2
+          id="compact-example-heading"
+          className="mb-6 text-2xl font-semibold text-neutral-900"
+        >
+          Card variations
+        </h2>
+        <p className="mt-3 max-w-2xl text-lg text-neutral-600">
+          These cards are exactly the same from a data perspective.  They have been generated dynamically by authoring a page ID.  Design variations have been achieved by specifying a theme (light or dark), "density" (standard or compact), CTA text, and CTA variant in each.  Changing "density" from standard to compact changes the size and layout of the card and what data points are exposed.  If all data points have been provided by an author, changing from one design variant to another is simple.  If some datapoints are missing, the author may need to added them if changing from compact to standard.
         </p>
         <div className="max-w-md">
-          <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
-            <ContentCard page={pages[7]} ctaLabel="Overriding the default CTA text" ctaVariant='button' />
+          <h3 className="">Default Presentation</h3>
+          <CardVariantProvider>
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
-          <CardVariantProvider variant={{ theme: 'light', density: 'standard' }}>
-            <ContentCard page={pages[7]} ctaLabel="Read more" ctaVariant='link' />
+          <h3 className="">Dark Variant</h3>
+          <CardVariantProvider variant={{ theme: 'dark', density: 'standard' }}>
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
+          <h3 className="">Light w/ custom CTA Text and Button</h3>
+          <CardVariantProvider>
+            <ContentCard page={pages[7]} ctaLabel="Override CTA text" ctaVariant='button' />
+          </CardVariantProvider>
+        </div>
+        <br/>
+        <div className="max-w-md">
+          <h3 className="">Dark w/ custom CTA Text and Button</h3>
+          <CardVariantProvider variant={{ theme: 'dark' }}>
+            <ContentCard page={pages[7]} ctaLabel="Override CTA text" ctaVariant='button' />
+          </CardVariantProvider>
+        </div>
+        <br/>
+        <div className="max-w-md">
+          <h3 className="">Compact Variant</h3>
           <CardVariantProvider variant={{ theme: 'light', density: 'compact' }}>
-            <ContentCard page={pages[7]} ctaLabel="Read more" ctaVariant='button' />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
         <br/>
         <div className="max-w-md">
+          <h3 className="">Dark Compact Variant</h3>
           <CardVariantProvider variant={{ theme: 'dark', density: 'compact' }}>
-            <ContentCard page={pages[7]} ctaLabel="Learn more" ctaVariant='link' />
+            <ContentCard page={pages[7]} />
           </CardVariantProvider>
         </div>
       </section>

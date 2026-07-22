@@ -27,12 +27,13 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
   const resolvedVariant = mergeVariants(collectionVariant, variant)
   const classes = resolveCardClasses(resolvedVariant)
   const compact = resolvedVariant.density === 'compact'
+  const pageURL = page.type + 's/' + page.slug
 
   if (compact) {
     return (
       <ResolvedVariantProvider variant={resolvedVariant}>
         <article className={cn(classes.root, className)}>
-          <a href={page.slug} className={classes.compactLink}>
+          <a href={pageURL} className={classes.compactLink}>
             {page.imageUrl && (
               <CardMedia
                 src={page.imageUrl}
@@ -51,7 +52,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
       <article className={cn(classes.root, className)}>
         {page.imageUrl && (
           <a
-            href={page.slug}
+            href={pageURL}
             className={classes.mediaLink}
             tabIndex={-1}
             aria-hidden="true"
@@ -64,9 +65,9 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
         )}
         <div className={classes.body}>
           <CardLabel>{page.category}</CardLabel>
-          <CardTitle slug={page.slug}>{page.title}</CardTitle>
+          <CardTitle href={pageURL}>{page.title}</CardTitle>
           <CardExcerpt>{page.excerpt}</CardExcerpt>
-          <CardCTA slug={page.slug} variant={ctaVariant}>
+          <CardCTA href={pageURL} variant={ctaVariant}>
             <CardCTALabel page={page} ctaLabel={ctaLabel} />
           </CardCTA>
         </div>

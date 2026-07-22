@@ -7,8 +7,8 @@ type Page = any
 export function ArticlePage({ page }: { page: Page }) {
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-        <img src={page.imageUrl} alt={page.imageAlt} className="w-full h-auto mb-6 rounded-lg" />
       <header className="mb-10 border-b border-neutral-200 pb-8">
+        <img src={page.imageUrl} alt={page.imageAlt} className="w-full h-auto mb-6 rounded-lg" />
         <h1 className="mt-2 text-4xl font-bold tracking-tight text-neutral-900">
             {page.title}
         </h1>
@@ -100,7 +100,7 @@ export function ArticlePage({ page }: { page: Page }) {
 }
 
 
-export function ArticleHub() {
+export function ArticlesHub() {
     return (
         <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
             <header className="mb-10 border-b border-neutral-200 pb-8">
@@ -108,7 +108,7 @@ export function ArticleHub() {
                     Article Hub
                 </h1>
                 <p className="mt-3 max-w-2xl text-lg text-neutral-600">
-                    This is a simple product page.
+                    This is a simple article page.
                 </p>
             </header>
         </main>

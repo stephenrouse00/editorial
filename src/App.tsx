@@ -1,35 +1,43 @@
 import { HomePage } from './pages/HomePage'
 import { ArticlePage } from './pages/Article'
-import { ArticleHub } from './pages/Article'
+import { ArticlesHub } from './pages/Article'
 import { ProductPage } from './pages/Product'
-import { ProductHub } from './pages/Product'
+import { ProductsHub } from './pages/Product'
 import { Page404 } from './pages/Page404'
 import { pages } from './data/pages'
 
 function App() {
   const path = window.location.pathname
-  
-  if (path === '/') {
-    return <HomePage />
-  } else {
-    const slug = window.location.pathname.replace('/', '')
-    const page = pages.find((p) => p.slug === slug)
+  const pathParts = path.split('/').filter(part => part !== '')
+  const pageType = pathParts[0]
+  const slug = pathParts[1]
+  const page = pages.find((p) => p.slug === slug)
 
-    console.log('Current slug: ', slug)
-    if (page?.type === 'article') {
+  
+console.log('Current pageType: ', pageType)
+console.log('Current slug: ', slug)
+
+  if (pathParts.length > 0) {
+    if (pageType === 'articles' || pageType === 'insights') {
+      if (page !== undefined) {
+        return <ArticlePage page={page} />
+      } else {
+        return <ArticlesHub />
+      }
+    }
+    if (pageType === 'products') {
+      if (page !== undefined) {
+        return <ProductPage page={page} />
+      } else {
+        return <ProductsHub />
+      }
+    }
+    if (pageType === 'articles' || pageType === 'products') {
       return <ArticlePage page={page} />
     }
-    if (page?.type === 'articles-hub') {
-      return <ArticleHub />
-    }
-    if (page?.type === 'product') {
-      return <ProductPage />
-    }
-    if (page?.type === 'products-hub') {
-      return <ProductHub />
-    }
     return <Page404 />
-
+  } else {
+    return <HomePage />
   }
 }
 
