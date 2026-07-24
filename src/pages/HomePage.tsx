@@ -112,9 +112,9 @@ export function HomePage() {
         </div>
         <br/>
         <div className="max-w-md">
-          <h3 className="">Dark w/ custom CTA Text and Button</h3>
+          <h3 className="">Dark w/ custom CTA Text and Button and custom Heading Level for Title</h3>
           <CardVariantProvider variant={{ theme: 'dark' }}>
-            <ContentCard page={pages[7]} ctaLabel="Override CTA text" ctaVariant='button' />
+            <ContentCard page={pages[7]} ctaLabel="Override CTA text" ctaVariant='button' titleHeadingLevel='h4' />
           </CardVariantProvider>
         </div>
         <br/>

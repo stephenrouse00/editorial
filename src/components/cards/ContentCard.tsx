@@ -10,7 +10,7 @@ import { CardCTA } from './CardCTA'
 import { CardExcerpt } from './CardExcerpt'
 import { CardLabel } from './CardLabel'
 import { CardMedia } from './CardMedia'
-import { CardTitle } from './CardTitle'
+import { CardTitle, type HeadingLevel } from './CardTitle'
 import { CardCTALabel } from './CardCTALabel'
 
 
@@ -20,9 +20,10 @@ export type ContentCardProps = {
   className?: string
   ctaLabel?: string
   ctaVariant?: CardCTAVariant
+  titleHeadingLevel?: HeadingLevel
 }
 
-export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: ContentCardProps) {
+export function ContentCard({ page, variant, className, ctaLabel, ctaVariant, titleHeadingLevel }: ContentCardProps) {
   const collectionVariant = useCollectionVariant()
   const resolvedVariant = mergeVariants(collectionVariant, variant)
   const classes = resolveCardClasses(resolvedVariant)
@@ -40,7 +41,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
                 alt={page.imageAlt ?? page.title}
               />
             )}
-            <h3 className={classes.title}>{page.title}</h3>
+            <CardTitle titleHeadingLevel={titleHeadingLevel} >{page.title}</CardTitle>
           </a>
         </article>
       </ResolvedVariantProvider>
@@ -65,7 +66,7 @@ export function ContentCard({ page, variant, className, ctaLabel, ctaVariant }: 
         )}
         <div className={classes.body}>
           <CardLabel>{page.category}</CardLabel>
-          <CardTitle href={pageURL}>{page.title}</CardTitle>
+          <CardTitle titleHeadingLevel={titleHeadingLevel} >{page.title}</CardTitle>
           <CardExcerpt>{page.excerpt}</CardExcerpt>
           <CardCTA href={pageURL} variant={ctaVariant}>
             <CardCTALabel page={page} ctaLabel={ctaLabel} />

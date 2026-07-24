@@ -3,6 +3,7 @@ import { ArticlePage } from './pages/Article'
 import { ArticlesHub } from './pages/Article'
 import { ProductPage } from './pages/Product'
 import { ProductsHub } from './pages/Product'
+import { CuratedPage } from './pages/Curated'
 import { Page404 } from './pages/Page404'
 import { pages } from './data/pages'
 
@@ -32,8 +33,8 @@ console.log('Current slug: ', slug)
         return <ProductsHub />
       }
     }
-    if (pageType === 'articles' || pageType === 'products') {
-      return <ArticlePage page={page} />
+    if (pageType === 'curated-pages') {
+      return <CuratedPage page={page} />
     }
     return <Page404 />
   } else {
